@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login & Reg | Success</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> {%load static%}
+    <link rel="stylesheet" href="{% static 'belt_exam/style.css' %}">
+</head>
+
+<body>
+    <!-- <div class="container my-3">       
+        <div class="form-group text-right">
+            <button type="button" class="btn btn-default">
+                <a href="/logout">Logout</a>
+            </button>
+        </div>
+        <h4>Success! Welcome, {{request.session.name}}!</h4>
+        <div class="msg">
+            {% if messages %} {% for message in messages %}
+            <div class="alert alert-success" role="alert">
+                {{ message }}
+            </div>
+            {% endfor %} {% endif %}
+        </div> -->
+
+    <div class="container">
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">Hello, {{request.session.name}}!</a>
+                </div>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active">
+                        <a href="/logout">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="msg">
+            {% if messages %} {% for message in messages %}
+            <div class="alert alert-success" role="alert">
+                {{ message }}
+            </div>
+            {% endfor %} {% endif %}
+        </div>
+
+        <div class="friends">
+            {%if count > 0%}
+            <p>Here is the list of your friends :</p>
+            <table>
+                <tr>
+                    <th>Alias</th>
+                    <th>Actions</th>
+                </tr>
+                {% for friend in friends %}
+                <tr>
+                    <td>{{friend.alias}}</td>
+                    <td>
+                        <a href="/user/{{friend.id}}">View profile</a>
+                        <a href="/user/{{friend.id}}/remove">Remove as Friend</a>
+                    </td>
+                </tr>
+                {%endfor%}
+            </table>
+            {%else%}
+            <p>You don't have friends yet.</p>
+            {%endif%}
+        </div>
+ 
+        <div class="all">   
+                <br>    
+            <p>Other Users not on your friend's list</p>
+            <table>
+                <tr>
+                    <th>Alias</th>
+                    <th>Action</th>
+                </tr>
+                {%if users%} {% for user in users %}
+                <tr>
+                    <td>
+                        <a href="/user/{{user.id}}">{{user.alias }}</a>
+                    </td>
+                    <td>
+                        <form action="/add" method="post">
+                            {%csrf_token%}
+                            <input type="hidden" name="fid" value={{user.id}}>
+                            <button type="submit" id="add">Add as Friend</button>
+                        </form>
+                    </td>
+                </tr>
+                {%endfor%} {%endif%}
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

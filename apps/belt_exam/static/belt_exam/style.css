@@ -1,0 +1,77 @@
+h1{
+    text-align: center;
+    background-color: rgba(223, 223, 233, 0.801);
+    padding: 10px;
+}
+.container{
+    margin: 0 auto;
+    background-color: rgba(227, 235, 190, 0.863);
+    max-width: 800px;
+}
+.register{
+    margin: 5px;
+    max-width: 650px;
+}
+.login{
+    margin: 5px;
+    max-width:650px;
+}
+table{
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+table td{
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    padding: 5px;
+    text-align: left;
+}
+
+table th {
+    text-align: center;
+    background-color: #1e3535;
+    color: rgb(229, 238, 236);
+    padding: 4px 30px 4px 8px; 
+}
+
+table tr{
+    text-align: left;
+}
+
+table td:first-child{
+    text-align: right;
+}
+
+table tr:nth-child(odd) td {
+    background-color:#bedfcc;
+}
+
+.friends{
+    margin: 20px;
+}
+
+.all{
+    margin: 20px;
+}
+form{
+    margin: 0;
+}
+a,form{
+    display: inline-block;
+}
+a{
+    padding: 5px;
+    text-align: right;    
+}
+.friends a{
+    text-decoration-line: underline;
+    font-weight: bold
+}
+.all a{
+    text-decoration-line: underline;
+    font-weight: bold
+}
+#add{
+    padding: 5px;
+    border: 1px solid black;
+}

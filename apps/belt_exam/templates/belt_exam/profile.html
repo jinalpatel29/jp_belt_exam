@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login & Reg | Success</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> {%load static%}
+    <link rel="stylesheet" href="{% static 'belt_exam/style.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">             
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active">
+                        <a href="/friends">Home</a>
+                    </li>
+                    <li class="active">
+                        <a href="/logout">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="content">           
+            <h3>{{profile.alias}}'s Profile</h3><br>
+            <p>Name  : {{profile.name}}</p>
+            <p>Email Address : {{profile.email_id}} </p>
+        </div>
+    </div>
+</body>
+
+</html>
